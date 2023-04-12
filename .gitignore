@@ -33,7 +33,7 @@ local.properties
 *.jks
 *.apk
 output-metadata.json
-
+android/.gradle
 # node.js
 #
 node_modules/

@@ -4,6 +4,7 @@ import {
   BlackShirt,
   WhiteShirt,
 } from '@/screens/ScatterChart/FootballPitch/PlayersMap/PlayersMap.styled'
+import { View } from 'react-native'
 
 const CIRCLE_RADIUS = 3
 
@@ -192,11 +193,15 @@ export const renderFootballPlayers = (
   return (
     <>
       {firstTeam &&
-        firstTeam.map((item) => {
+        firstTeam.map((item, idx) => {
           const x = item.x * xDiffProportion * xProportion + xDiff
           const y = item.y * yDiffProportion * yProportion + yDiff
 
-          return <WhiteShirt left={x} top={y} />
+          return (
+            <View key={`${item.x} ${idx}`}>
+              <WhiteShirt left={x} top={y} />
+            </View>
+          )
         })}
       {secondTeam &&
         secondTeam.map((item) => {
