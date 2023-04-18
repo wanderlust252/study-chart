@@ -9,6 +9,7 @@ export const HomeHeader = () => {
       const didCrash = await Crashes.hasCrashedInLastSession()
       if (didCrash) {
         Alert.alert('Report', 'The application had been crashed. We are working to fix it!')
+        // blah blah
       }
     }
     checkCrash()
